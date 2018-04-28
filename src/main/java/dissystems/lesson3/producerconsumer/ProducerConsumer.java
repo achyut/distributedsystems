@@ -1,17 +1,20 @@
-package dissystems.lesson3;
+package dissystems.lesson3.producerconsumer;
+
+import dissystems.lesson3.BinarySemaphoreV2;
+import dissystems.lesson3.CountingSemaphore;
 
 /**
  * Created by apaud on 4/28/18.
  */
 public class ProducerConsumer {
-	int n;
-	int currProd = -1;
-	int currCons = -1;
-	double[] buffer;
+	private int n;
+	private int currProd = -1;
+	private int currCons = -1;
+	private double[] buffer;
 
-	BinarySemaphoreV2 mutex = new BinarySemaphoreV2();
-	CountingSemaphore PS;
-	CountingSemaphore CS;
+	private BinarySemaphoreV2 mutex = new BinarySemaphoreV2();
+	private CountingSemaphore PS;
+	private CountingSemaphore CS;
 
 	public ProducerConsumer(int n) {
 		this.n = n;

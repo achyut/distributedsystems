@@ -7,7 +7,8 @@ import dissystems.utils.Util;
  */
 public class BinarySemaphoreV2 implements Semaphore {
 
-	boolean value;
+	private boolean value;
+
 	@Override
 	public synchronized void P() {
 		while(value){

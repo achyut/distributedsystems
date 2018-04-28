@@ -1,5 +1,12 @@
 package dissystems.lesson3;
 
+import dissystems.lesson3.producerconsumer.ConsumerThread;
+import dissystems.lesson3.producerconsumer.ProducerConsumer;
+import dissystems.lesson3.producerconsumer.ProducerThread;
+import dissystems.lesson3.readerwriter.ReaderThread;
+import dissystems.lesson3.readerwriter.ReaderWriter;
+import dissystems.lesson3.readerwriter.WriterThread;
+
 /**
  * Created by apaud on 4/28/18.
  */
@@ -7,8 +14,22 @@ public class Runner {
 
 	public static void main(String[] args) {
 		//example();
-		producerconsumer();
+		//producerconsumer();
+		readerwriter();
+	}
 
+	public static void readerwriter(){
+		int currentVal = -1;
+		ReaderWriter readerWriter = new ReaderWriter(currentVal);
+		for(int i=0;i< 10;i++){
+			ReaderThread rn = new ReaderThread(readerWriter);
+			rn.start();
+		}
+		WriterThread w1 = new WriterThread(readerWriter);
+		WriterThread w2 = new WriterThread(readerWriter);
+
+		w1.start();
+		w2.start();
 	}
 
 	public static void producerconsumer(){

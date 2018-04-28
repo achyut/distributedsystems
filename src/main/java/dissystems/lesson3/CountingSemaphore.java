@@ -7,7 +7,7 @@ import dissystems.utils.Util;
  */
 public class CountingSemaphore implements Semaphore{
 
-	int value;
+	private int value;
 
 	public CountingSemaphore(int value) {
 		this.value = value;

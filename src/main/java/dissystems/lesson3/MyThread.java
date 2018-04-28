@@ -8,9 +8,9 @@ import java.util.Random;
  * Created by apaud on 4/28/18.
  */
 public class MyThread extends Thread {
-	int pid;
-	Semaphore semaphore;
-	Random rand = new Random();
+	private int pid;
+	private Semaphore semaphore;
+	private Random rand = new Random();
 
 	public MyThread(int pid, Semaphore semaphore) {
 		this.pid = pid;

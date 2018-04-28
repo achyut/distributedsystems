@@ -1,4 +1,4 @@
-package dissystems.lesson3;
+package dissystems.lesson3.producerconsumer;
 
 import dissystems.utils.Util;
 
@@ -8,9 +8,9 @@ import java.util.Random;
  * Created by apaud on 4/28/18.
  */
 public class ProducerThread extends Thread {
-	ProducerConsumer producerConsumer;
 
-	Random rand = new Random();
+	private ProducerConsumer producerConsumer;
+	private Random rand = new Random();
 
 	public ProducerThread(ProducerConsumer producerConsumer){
 		this.producerConsumer = producerConsumer;
