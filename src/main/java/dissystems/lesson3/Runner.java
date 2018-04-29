@@ -1,5 +1,7 @@
 package dissystems.lesson3;
 
+import dissystems.lesson3.diningphiloshopher.DiningPhiloshoper;
+import dissystems.lesson3.diningphiloshopher.Philoshoper;
 import dissystems.lesson3.producerconsumer.ConsumerThread;
 import dissystems.lesson3.producerconsumer.ProducerConsumer;
 import dissystems.lesson3.producerconsumer.ProducerThread;
@@ -15,9 +17,19 @@ public class Runner {
 	public static void main(String[] args) {
 		//example();
 		//producerconsumer();
-		readerwriter();
+		//readerwriter();
+		diningphiloshoper();
 	}
 
+	public static void diningphiloshoper(){
+		int num = 2;
+
+		DiningPhiloshoper diningPhiloshoper = new DiningPhiloshoper(num);
+		for(int i=0;i<num;i++){
+			Philoshoper p = new Philoshoper(i,diningPhiloshoper);
+			p.start();
+		}
+	}
 	public static void readerwriter(){
 		int currentVal = -1;
 		ReaderWriter readerWriter = new ReaderWriter(currentVal);
