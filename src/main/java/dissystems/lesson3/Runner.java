@@ -11,6 +11,7 @@ import dissystems.lesson3.readerwriter.WriterThread;
 import dissystems.utils.Util;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by apaud on 4/28/18.
@@ -28,6 +29,7 @@ public class Runner {
 
 	private static void bcell() {
 
+		Random rand = new Random();
 		final Bcell cell1 = new Bcell();
 		final Bcell cell2 = new Bcell();
 
@@ -35,29 +37,24 @@ public class Runner {
 			Thread th = new Thread(new Runnable() {
 				@Override
 				public void run() {
-					cell1.setValue(1);
+					int dice = ThreadLocalRandom.current().nextInt(1,4);
+					if(dice == 1){
+						cell1.setValue(rand.nextInt(100));
+						System.out.println("Cell1 value: "+cell1.value);
+					}
+					else if(dice == 2){
+						cell2.setValue(rand.nextInt(100));
+						System.out.println("Cell2 value: "+cell2.value);
+					}
+					else if(dice == 3){
+						cell2.swap(cell1);
+						System.out.println("Cell1 value after swap: "+cell1.value);
+						System.out.println("Cell2 value after swap: "+cell2.value);
+					}
 				}
 			});
 			th.start();
-			System.out.println("Cell1 value: "+cell1.value);
-			Thread th2 = new Thread(new Runnable() {
-				@Override
-				public void run() {
-					cell2.setValue(2);
-				}
-			});
-			th2.start();
-			System.out.println("Cell2 value: "+cell2.value);
-			Thread th3 = new Thread(new Runnable() {
-				@Override
-				public void run() {
-					cell2.swap(cell1);
-				}
-			});
-			th3.start();
-			System.out.println("Cell2 value after swap: "+cell2.value);
-
-			Util.randomSleep(5000);
+			//Util.randomSleep(1000);
 		}
 
 
