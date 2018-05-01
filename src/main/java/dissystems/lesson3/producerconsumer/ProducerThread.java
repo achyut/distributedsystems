@@ -19,8 +19,9 @@ public class ProducerThread extends Thread {
 	@Override
 	public void run() {
 		while(true){
-			System.out.println(Thread.currentThread().getName()+" is producing");
-			producerConsumer.produce(rand.nextDouble());
+			double val = rand.nextDouble();
+			System.out.println(Thread.currentThread().getName()+" is producing value "+val);
+			producerConsumer.produce(val);
 			Util.mySleep(rand.nextInt(1000));
 		}
 	}

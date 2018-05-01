@@ -8,12 +8,12 @@ import dissystems.lesson3.Semaphore;
 /**
  * Created by apaud on 4/28/18.
  */
-public class DiningPhiloshoper implements Resource{
+public class DiningPhiloshoperSemaphore implements Resource{
 
 	int num;
 	Semaphore[] forks;
 
-	public DiningPhiloshoper(int num) {
+	public DiningPhiloshoperSemaphore(int num) {
 		this.num = num;
 		this.forks = new BinarySemaphoreV2[num];
 		for(int i=0; i<num; i++){

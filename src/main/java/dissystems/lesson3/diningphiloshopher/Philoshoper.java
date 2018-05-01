@@ -1,5 +1,6 @@
 package dissystems.lesson3.diningphiloshopher;
 
+import dissystems.lesson3.Resource;
 import dissystems.utils.Util;
 
 /**
@@ -7,9 +8,9 @@ import dissystems.utils.Util;
  */
 public class Philoshoper extends Thread {
 	private int pid;
-	DiningPhiloshoper diningPhiloshoper;
+	Resource diningPhiloshoper;
 
-	public Philoshoper(int pid, DiningPhiloshoper diningPhiloshoper) {
+	public Philoshoper(int pid, Resource diningPhiloshoper) {
 		this.pid = pid;
 		this.diningPhiloshoper = diningPhiloshoper;
 	}

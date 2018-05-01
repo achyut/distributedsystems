@@ -1,6 +1,5 @@
 package dissystems.lesson3.producerconsumer;
 
-import dissystems.lesson3.producerconsumer.ProducerConsumer;
 import dissystems.utils.Util;
 
 import java.util.Random;
