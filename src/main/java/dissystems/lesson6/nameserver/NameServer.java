@@ -8,6 +8,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.StringTokenizer;
 
+import dissystems.utils.Symbols;
+
 /**
  * Stub description of the class.
  *
@@ -65,7 +67,7 @@ public class NameServer {
 		NameTable table = new NameTable();
 		NameServer server = new NameServer(table);
 
-		int serverPort = 2022;
+		int serverPort = Symbols.serverPort;
 		System.out.println("Nameserver Started!");
 
 		try {

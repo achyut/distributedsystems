@@ -8,6 +8,7 @@ import java.net.Socket;
 import java.util.StringTokenizer;
 
 import dissystems.utils.PortAddr;
+import dissystems.utils.Symbols;
 
 /**
  * Stub description of the class.
@@ -19,8 +20,8 @@ public class NameClient {
 	BufferedReader din;
 	PrintStream pout;
 
-	String NAMESERVERHOST = "localhost";
-	int NAMESERVERPORT = 2022;
+	String NAMESERVERHOST = Symbols.nameServer;
+	int NAMESERVERPORT = Symbols.serverPort;
 
 	public void getSocket() throws IOException {
 		Socket socket = new Socket(NAMESERVERHOST,NAMESERVERPORT);
